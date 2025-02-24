@@ -16,7 +16,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-  let choice = prompt("Choose paper, rock or scissors!")
+  let choice = prompt("Choose a paper, a rock or a scissors!")
   choice ? choice.toLowerCase() : getHumanChoice();
   if (choice === "paper" || choice === "rock" || choice === "scissors"){
     return choice;
@@ -63,6 +63,10 @@ function showScore(){
 function playGame(){
   for(let i = 0; i < ROUNDS_COUNT; i++){
     playRound(getHumanChoice(), getComputerChoice());
+  }
+  if(humanScore == computerScore){
+    alert(`It's a tie! ${showScore()}`);
+    return;
   }
   let winner = humanScore > computerScore ? "Human" : "Computer";
   alert(`${winner} wins! ${showScore()}`);
