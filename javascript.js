@@ -64,7 +64,7 @@ function playGame(){
   for(let i = 0; i < ROUNDS_COUNT; i++){
     playRound(getHumanChoice(), getComputerChoice());
   }
-  if(humanScore == computerScore){
+  if(humanScore === computerScore){
     alert(`It's a tie! ${showScore()}`);
     return;
   }
